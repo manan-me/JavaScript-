@@ -97,3 +97,38 @@ console.log(typeof person);  // "object"
 
 
 
+
+
+// --------------------------Memory----------------------------------
+/*  Stack(Primitive) copy
+   Heap(Non Primitive) Referenced
+ */
+// stack 
+let myName='Manan'
+let aontherName=myName
+
+aontherName='Abdul Manan'
+
+console.log(myName);
+console.log(aontherName);
+
+
+
+let userOne={
+    email:'abdul manan',
+    id:'f24'
+}
+
+let userTwo=userOne
+userTwo.id='m544'
+
+console.log(userOne.id);   //m544
+console.log(userTwo.id);   //m544
+
+
+
+
+
+
+
+
