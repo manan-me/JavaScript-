@@ -63,3 +63,31 @@ console.log(Object.entries(obj2)); // Array into array of object :   [ [ 'id', '
 
 console.log(obj2.hasOwnProperty("age"));    // tell wheter this is in object
 
+
+
+
+////Destructurig of objects...................
+const course={
+    name:"CS",
+    id:"1234",
+    courseInstructor:"Ali"
+}
+
+//to reduce every time course.id write to access value we use destructing
+
+// const {courseInstructor}=course
+// console.log(courseInstructor);
+//also
+const {courseInstructor:instructor}=course
+console.log(instructor);
+
+
+
+//API in the form of jason
+//JSON LOOK
+// {
+//     "name"="Manan",
+//     "id"="123",
+//     "age"="22"
+// }
+
