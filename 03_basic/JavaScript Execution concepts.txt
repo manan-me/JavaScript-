@@ -1,0 +1,22 @@
+2 Mian execution phases
+
+
+1 Global execution phases
+
+2 Functional Execution phases
+
+
+
+2 step to execute a code
+
+1) Memory Allocation
+
+2) Execution
+
+
+
+when we call a function  then again there is A box with : New variable Enviornment+ Execution Thread
+
+then agin memory nd execution phase for that func as well
+
+
