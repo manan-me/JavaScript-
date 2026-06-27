@@ -51,6 +51,9 @@ const lasi2=function(){
     // const add=(num1,num2) =>  (num1+num2)               //also can add parantheses
     const add=(num1,num2) =>  ({username:"Manan"})               //to return object
     console.log(add(4,7));
+
+
+    
     
 
 
