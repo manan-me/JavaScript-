@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM With Manan</title>
+</head>
+<body style="background-color: black;color: white;">
+    
+</body>
+<script>
+    const   div=document.createElement("div") //we can create any elemnt using document
+    console.log(div);  //each element is a nodelist wiht all vlaues that cann be set // more learn wiht claude
+    div.className="box"
+// div.id="line"
+div.id=Math.round(Math.random()*10+1)
+div.setAttribute("title","divsinc")  //key value pairs to set attributes
+div.style.backgroundColor="green"
+///div.innerHTML="Hey this is box"  //we can also do this using other way //people say i first get reference and then update value 2 roundtrip    as it override
+const addText=document.createTextNode("Hey this is box")
+div.appendChild(addText)     //but in method we again  using 2 roundtrip first set addText and then append      so there is a debate about these   
+
+
+//so now we have to add this div in body so it apppears on screen
+
+document.body.appendChild(div)
+</script>
+
+</html>

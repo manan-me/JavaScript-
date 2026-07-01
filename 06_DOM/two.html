@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with Manan</title>
+</head>
+<body style="background-color: black;color: white;">
+    <div class="Parent">
+        <!--This is comment-->        //if we add this type of comment then it also adde din ChildNode list with following with prev an dnext line breaks 
+        <div class="days">Sunday</div>
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+    </div>
+</body>
+<script>
+const parent=document.querySelector(".Parent")
+console.log(parent);
+console.log(parent.children);
+console.log(parent.children[1]);
+console.log(parent.children[1].innerHTML);
+
+for (let i = 0; i< parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);     //using for loop on HTMLCollection
+    }
+    
+    const childdays=Array.from(parent.children)      //convert HTMLCollection to Array and store it in childdays
+    
+for (let i = 0; i < childdays.length; i++) {
+    console.log(childdays[i].innerHTML);
+    
+}
+
+
+childdays[0].style.color="orange"     //change color of 0th element in HTMLCollection
+
+
+console.log(parent.firstElementChild);  //returns first elemnt of parrent
+console.log(parent.lastElementChild);  //returns last elemnt of parrent
+
+const dayone=document.querySelector(".days")       //selecting days
+console.log(dayone);
+console.log(dayone.parentNode);    //geting parent element form child
+console.log(dayone.parentElement);
+
+console.log(dayone.nextElementSibling);  //gets next elemnt of current child
+
+
+console.log(parent.childNodes);  //it return a node list with 9 as there are total 10 but we have 4 days so it means
+//it also add line breaks as text in list but it only adddd one line break at one point 
+
+console.log(parent.children[0].childNodes);
+console.log(parent.children); //children only returns 4 childrens no line breaks
+
+
+
+
+
+
+</script>
+
+
+</html>

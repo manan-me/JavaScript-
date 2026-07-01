@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+
+
+</body>
+<script>
+
+    <!--ADDING Values-->
+    
+    const addLanguage=(langName)=>{  //////using arrow function
+    const li=document.createElement("li")
+    li.innerHTML=langName
+    // const addText=document.createTextNode(langName)
+    // li.appendChild(addText)
+    //console.log(li);
+    
+     //document.body.appendChild(li)  //append in body
+     //to append in that specific ul we use this :
+     document.querySelector(".language").appendChild(li)     //we can also sore queryselector result in a variab;e and then do append
+
+
+ }
+
+ addLanguage("c++")
+ addLanguage("python")
+ addLanguage("C-Sharp")
+
+
+//  ***********But in this method every time program has to traverse whole tree of lists to add or append list at last that a problem not too big but still
+
+// so we used an optimized tecnique
+//differ is that when we use innerhtml than it traverse all tree 
+//but when we use appendChild then it is optimized
+
+//always prefer to use appendChild
+
+const addOptiLanguage=(langName)=>{
+    const li=document.createElement("li")
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector(".language").appendChild(li)
+}
+
+addOptiLanguage("TypeScript");
+
+
+
+//<!--Edit Values-->
+const editList=document.querySelector("li:nth-child(4)")
+editList.innerHTML="CSS" //it will override
+ 
+// editList.appendChild(document.createTextNode("CSS"))  //it will append
+  
+// ****We have another method of replace
+const li=document.createElement("li")
+li.appendChild(document.createTextNode("Super_CSS"))
+
+editList.replaceWith(li)  //it replaces element with other
+
+//edit another one
+
+const firstElement=document.querySelector("li:first-child")
+firstElement.outerHTML="<li>SQL with outer html</li>"
+
+
+
+
+/////////parentNode.replaceChild(newNode, oldNode);
+
+const editParent=document.querySelector(".language")
+const oldLi=editParent.children[2]  //python
+const newLi=document.createElement("li")
+newLi.appendChild(document.createTextNode("Replace child used to replace Pyhton with HTML"  ))
+editParent.replaceChild(newLi,oldLi)
+
+
+
+
+
+
+
+
+
+//remove 
+const lastLang=document.querySelector("li:last-child")
+lastLang.remove()  //TypeScript Removed
+
+
+</script>   
+</html>
