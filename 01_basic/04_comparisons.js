@@ -15,7 +15,7 @@ console.log(undefined ==0);    // always give false whenever comapre and eqality
 
 // ===   strict check      it not only compare but also check data types before
 
-console.log('2' === 0);
+console.log('2' === 2);
 
 
 

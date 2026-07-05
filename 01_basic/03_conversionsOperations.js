@@ -1,15 +1,16 @@
 // let score= "33abc"
 // let score="33"
 // let score= 33
-//let score= null
+ let score= true
+// let score= null
 // let score= undefined
-let score="manan"
+// let score="manan"
 console.log(typeof score);
 
 console.log(typeof(score));
 
 
-let valueInNumber=Number(score)
+let valueInNumber=String(score)
 
 console.log(typeof valueInNumber);
 
