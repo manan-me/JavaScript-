@@ -1,5 +1,5 @@
 console.log('2' > 0);
-console.log('2' > 1);            
+console.log('2' > 2);            
 
 
 
@@ -11,7 +11,7 @@ console.log(undefined ==0);    // always give false whenever comapre and eqality
 
 
 //****Important ****//
-//Equality check and coparisons are different in javascript
+//Equality check and coparisons are different in javascriptt
 
 // ===   strict check      it not only compare but also check data types before
 
