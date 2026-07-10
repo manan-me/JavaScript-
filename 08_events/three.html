@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+</head>
+<body>
+    <h1>A sync Projects</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+</body>
+<script>
+
+let sayDate=(str)=>{
+    console.log(str , Date.now());
+    
+}
+
+// let Intervals=setInterval(sayDate,2000, 'Manan')
+
+
+// clearInterval(Intervals)
+
+let inter=null
+
+document.getElementById('start').addEventListener('click',()=>{
+    if(inter) return                          ///prevent multiple intervals to run
+    inter=setInterval(sayDate,2000,'Manan')
+    console.log('Started');
+    
+})
+
+document.getElementById('stop').addEventListener('click',()=>{
+    clearInterval(inter)
+    console.log('stopped');
+    inter=null
+    
+})
+
+
+</script>
+
+</html>

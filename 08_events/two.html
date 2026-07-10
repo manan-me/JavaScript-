@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Projects</title>
+</head>
+<body>
+    <h1>A sync Projects</h1>
+    <button id="stop">Stop</button>
+
+
+</body>
+<script>
+
+// setTimeout(()=>{
+//     console.log('Manan');
+                                 //one way  
+// },2000)
+
+
+
+                                 // also can be using reference
+
+let func=()=>{
+    console.log('Manan');
+                                 
+}
+
+// setTimeout(func,2000)
+
+// interval method do this continously known as interval
+
+
+// setInterval(func,2000)
+
+let changeText=()=>{
+    document.querySelector('h1').innerHTML='Asyn projects by Manan'
+}
+ let timeout=setTimeout(changeText,2000)
+
+document.getElementById('stop').addEventListener('click',()=>{
+    clearTimeout(timeout)
+    console.log('Changing text timeout is stoped');
+    
+})
+
+
+
+</script>
+
+</html>
