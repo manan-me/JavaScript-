@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG color</title>
+</head>
+<body>
+
+<h1>Sart to suffle back ground colors</h1>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+
+<script>
+//random color gen func
+
+let controlInter=null
+
+let randomColor=()=>{
+    let hexcolor='#'  //6 digits in hexColors
+    const hexChars = "0123456789ABCDEF"
+
+    for (let i = 0; i < 6; i++) {
+       rand=Math.floor(Math.random()*(15+1))
+        hexcolor+=hexChars[rand]      
+    }
+
+    document.body.style.backgroundColor=hexcolor
+}
+
+document.getElementById('start').addEventListener('click',()=>{
+    if(controlInter) return
+
+  controlInter=setInterval(randomColor,1000)
+  
+
+})
+
+document.getElementById('stop').addEventListener('click',()=>{
+
+    clearInterval(controlInter)
+    controlInter=null
+
+})
+
+
+
+
+
+
+</script>    
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Shuffler</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+  <div class="card">
+    <p class="eyebrow">Color Experiment</p>
+    <h1>Background Shuffler</h1>
+    <p class="subtitle">Generates a random hex color every second and paints the canvas behind.</p>
+
+    <div class="btn-group">
+      <button id="start">▶ Start</button>
+      <button id="stop">■ Stop</button>
+    </div>
+
+    <div class="hex-badge" id="hexDisplay">#------</div>
+
+    <div class="status">
+      <span class="dot" id="dot"></span>
+      <span id="statusText">Idle</span>
+    </div>
+  </div>
+
+<script>
+  let controlInter = null
+
+  let randomColor = () => {
+    let hexcolor = '#'
+    const hexChars = "0123456789ABCDEF"
+    for (let i = 0; i < 6; i++) {
+      hexcolor += hexChars[Math.floor(Math.random() * 16)]
+    }
+    document.body.style.backgroundColor = hexcolor
+    document.getElementById('hexDisplay').textContent = hexcolor  // shows current hex
+    return hexcolor
+  }
+
+  document.getElementById('start').addEventListener('click', () => {
+    if (controlInter) return
+    randomColor()  // fire immediately on click, don't wait 1s
+    controlInter = setInterval(randomColor, 1000)
+    document.getElementById('dot').classList.add('active')
+    document.getElementById('statusText').textContent = 'Running'
+  })
+
+  document.getElementById('stop').addEventListener('click', () => {
+    clearInterval(controlInter)
+    controlInter = null
+    document.getElementById('dot').classList.remove('active')
+    document.getElementById('statusText').textContent = 'Idle'
+  })
+</script>
+</body>
+</html>
