@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="Orange">Orange</button>
+    <button id="Green">Green</button>
+    <script>
+        // function init(){
+        //     let name='Manan'
+        //     function printMe(){
+        //         console.log(name);
+                
+        //     }
+        //     printMe()
+        // }
+        // init()
+
+
+   function Naam(){
+    let name='Man'
+    function printIt(){
+        console.log(name);
+        
+    }
+    return printIt
+   }
+   const func=Naam()
+   func()
+
+
+
+
+
+
+    </script>
+
+    <script>
+        // document.querySelector('#Orange').onclick=function(){
+        //     document.body.style.backgroundColor='Orange'
+        // }
+        // document.querySelector('#Green').onclick=function(){
+        //     document.body.style.backgroundColor='Green'
+        // }
+
+
+       function clickHandler(color) {
+        //    document.body.style.backgroundColor = `${color}`
+        return function(){
+        document.body.style.backgroundColor = `${color}`
+
+    }
+}
+
+   document.getElementById('Orange').onclick=clickHandler('orange')
+   document.getElementById('Green').onclick=clickHandler('green')
+        
+
+        </script>
+</body>
+</html>
